@@ -1,0 +1,23 @@
+! Xresources - mainly urxvt settings
+
+! URxvt
+URxvt.scrollBar: false
+URxvt.cursorUnderline: false
+URxvt.internalBorder: 10
+
+! Fonts
+URxvt.font:     xft:bitstream vera sans mono:size=9:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=9:antialias=true
+
+
+! Clickable URLs
+URxvt.perl-ext-common:default,matcher,font-size
+URxvt.url-launcher: firefox-nightly
+URxvt.matcher.button: 1
+
+! Use Control-Shift-V/C for X clipboard
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+*.alpha: 230

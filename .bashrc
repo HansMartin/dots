@@ -45,4 +45,4 @@ export BROWSER=firefox
 
 # fix broken st Del key
 printf '\033[?1h\033=' >/dev/tty
-alias config='/usr/bin/git --git-dir=$HOME/documents/dots/.git --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/documents/dots/.git --work-tree=$HOME'
