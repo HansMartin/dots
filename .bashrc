@@ -30,6 +30,7 @@ fi
 #    eval $HOME/.base16_theme
 #fi
 
+
 # vim-mode for bash
 #set -o vi
 
