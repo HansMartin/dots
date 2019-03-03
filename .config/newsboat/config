@@ -10,3 +10,4 @@ browser "surf"
 
 macro v set browser "setsid nohup mpv"; open-in-browser ; set browser linkhandler
 
+

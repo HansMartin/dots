@@ -42,12 +42,10 @@ alias update='sudo vpm sync'
 alias upgrade='sudo vpm update'
 alias install='sudo vpm install'
 
-# own tools
 alias cheat='python /root/tools/cheat/cheat.py'
-
 alias python="python2"
 alias loadX='xrdb $HOME/.Xresources'
-
+alias zzz='systemctl hibernate'
 
 
 # brightness settings
@@ -71,5 +69,9 @@ alias cdD='cd $HOME/downloads'
 alias cdt='cd $HOME/documents/tools'
 
 
+# copy the current path to clipboard
+alias cpwd='xclip -selection clipboard -i <(pwd | tr -d "\n")'
 
-alias fuck='sudo !!'
+# copy the last command issued to the clipboard
+alias clc='fc -ln -1 | tr -d "\n" | sed "s/^\s*//g" | xclip -selection clipboard -i'
+

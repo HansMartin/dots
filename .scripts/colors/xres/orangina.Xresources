@@ -1,22 +1,22 @@
-! Base16 3024
-! Scheme: Jan T. Sott (http://github.com/idleberg)
+! Orangine ~ Author: swrzm
+! Mix of base16_tomorrow-night and base16_nord
 
-#define base00 #090300
-#define base01 #3a3432
-#define base02 #4a4543
-#define base03 #5c5855
-#define base04 #807d7c
-#define base05 #a5a2a2
-#define base06 #d6d5d4
-#define base07 #f7f7f7
-#define base08 #db2d20
-#define base09 #e8bbd0
-#define base0A #fded02
-#define base0B #01a252
-#define base0C #b5e4f4
-#define base0D #01a0e4
-#define base0E #a16a94
-#define base0F #cdab53
+#define base00 #1d1f21
+#define base01 #282a2e
+#define base02 #373b41
+#define base03 #969896
+#define base04 #b4b7b4
+#define base05 #c5c8c6
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #cc6666
+#define base09 #de935f
+#define base0A #f0c674
+#define base0B #b5bd68
+#define base0C #8abeb7
+#define base0D #ebcb8b
+#define base0E #a3be8c
+#define base0F #a3685a
 
 *foreground:   base05
 #ifdef background_opacity

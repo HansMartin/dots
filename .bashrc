@@ -35,7 +35,7 @@ fi
 #set -o vi
 
 # fzf - fuzzy file finder completion
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.config/fzf/fzf.bash ] && source ~/.config/fzf/fzf.bash
 
 # PS1 string
 source $HOME/.scripts/ps1.sh
@@ -44,6 +44,9 @@ source $HOME/.scripts/ps1.sh
 export EDITOR=vim
 export BROWSER=firefox
 
-# fix broken st Del key
-printf '\033[?1h\033=' >/dev/tty
+# fix broken st DEL Key
+#printf '\033[?1h\033=' >/dev/tty
+tput smkx
+
+# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias dots='/usr/bin/git --git-dir=$HOME/documents/dots/.git --work-tree=$HOME'

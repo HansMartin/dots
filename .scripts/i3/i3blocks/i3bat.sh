@@ -37,7 +37,7 @@ do
         squares="charging "
     ;;
     "Full")
-        squares=""
+        squares="100%"
     ;;
     "AC")
         squares=""

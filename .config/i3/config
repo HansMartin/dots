@@ -309,11 +309,12 @@ assign [instance="spotify"]             8
 # -----[ Runtime ]----- #
 
 exec         --no-startup-id redshift-gtk                                                               # no bluelight
-exec         --no-startup-id $HOME/.scripts/misc/multimonitor.sh                                        # script for multi monitor
-exec         --no-startup-id $HOME/.scripts/tools/colorchanger base16_gruvbox-dark-pale                 # colorscheme
+#exec         --no-startup-id $HOME/.scripts/tools/colorchanger base16_gruvbox-dark-pale                 # colorscheme _old
+exec         --no-startup-id $HOME/.scripts/tools/colorchanger orangina                                 # colorscheme
 exec         --no-startup-id nm-applet                                                                  # network manager applet
 exec         --no-startup-id volumeicon                                                                 # i need music! ~ applet for audio
 exec         --no-startup-id xfce4-power-manager                                                        # display power settings
 exec         --no-startup-id compton -b                                                                 # Transparency
 exec_always  --no-startup-id feh --bg-fill $HOME/pictures/wallpaper/wall.jpg
 exec_always  --no-startup-id setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl         # us-international kb layout
+exec_always  --no-startup-id $HOME/.scripts/misc/multimonitor.sh                                        # script for multi monitor

@@ -36,8 +36,7 @@ call plug#end()
 " Color Settings
 "let base16colorspace=256
 "set t_Co=256
-"colorscheme base16-dracula
-colorscheme base16-tomorrow-night
+colorscheme base16-nord
 
 " Encoding
 set encoding=utf-8
@@ -109,6 +108,7 @@ let g:livepreview_previewer = 'zathura'
 
 " Bind Goyo to shortcut
 map <F3> <ESC>:Goyo <CR>
+map <F4> <ESC>:Goyo 95%<CR>
 
 " Goyo configuration
 let g:goyo_width=100

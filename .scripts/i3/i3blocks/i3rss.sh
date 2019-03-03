@@ -5,6 +5,7 @@ case $BLOCK_BUTTON in
     2) ;;
 esac
 
+newsboat -x reload
 num_articles=$(newsboat -x print-unread | awk '{print $1}')
 
 echo "$num_articles"

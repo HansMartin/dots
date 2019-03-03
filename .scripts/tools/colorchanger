@@ -2,17 +2,11 @@
 # changes the color of i3-gaps and the terminal
 # needs: $HOME/.scripts/color/i3
 # needs: $HOME/.scripts/color/shell
+# needs: $HOME/.scripts/color/rofi
 
 # usage: colorchanger <base16_color>
 # uses base16_tomorrow-night as default color when run without argument
 
-# to work in new terminal sessions:
-# Put the following snippet in .bashrc
-# ------------------------------------
-#   if [ -f $HOME/.base16_theme ]; then
-#       eval $HOME/.base16_theme
-#   fi
-# ------------------------------------
 
 change_rofi() {
     rb_path=$HOME/.scripts/colors/rofi
@@ -25,7 +19,7 @@ change_rofi() {
 }
 
 
-change_i3 () {
+change_xres () {
     bi3_dir=$HOME/.scripts/colors/i3
     xr="$bi3_dir/$base16_color.Xresources"
 
@@ -35,39 +29,20 @@ change_i3 () {
     fi
 }
 
-change_xres () {
-    xdir=$HOME/.scripts/colors/xresources
-    xr="$xdir/$base16_color-256.Xresources"
-
-    if [ -f $xr ]; then
-        xrdb -override "$xr"
-    fi
-}
-
-change_shell () {
-    bs_dir=$HOME/.scripts/colors/shell
-    script="$bs_dir/$base16_color.sh"
-
-    if [ -f $script ]; then
-        eval $script
-        rm -f $HOME/.base16_theme
-        ln -s $script $HOME/.base16_theme
-    fi
-}
-
-
 
 main (){
-    change_i3
-#    change_shell
-    #change_xres
+    change_xres
     change_rofi
 }
 
+if [ $1 == "--list" ]; then
+    ls -l $HOME/.scripts/colors/xres | awk '{print $9}' | sed 's/\.sh//'
+    exit 1
+fi
 
 if [ "$#" != "1" ]; then
     echo "[*] Settings default color."
-    base16_color="base16_tomorrow-night"
+    base16_color="orangina"
 else
     echo "[*] Settings colorscheme to $1."
     base16_color=$1
