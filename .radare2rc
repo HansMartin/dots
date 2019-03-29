@@ -1,3 +1,64 @@
 e scr.utf8=true
 e scr.utf8.curvy=true
 
+# Base16 Tomorrow Night
+# Author: Chris Kempson (http://chriskempson.com)
+
+ec prompt rgb:cc6666
+ec swi rgb:cc6666
+
+ec b0x00 rgb:373b41
+ec b0x7f rgb:969896
+ec b0xff rgb:969896
+ec btext rgb:81a2be
+ec other rgb:c5c8c6
+
+ec push rgb:b294bb
+ec pop rgb:b294bb
+
+ec bin rgb:81a2be
+ec math rgb:81a2be
+ec mov rgb:81a2be
+ec call rgb:f0c674
+ec cjmp rgb:8abeb7
+ec jmp rgb:8abeb7
+ec cmp rgb:81a2be
+ec ret rgb:81a2be
+ec nop rgb:373b41
+
+ec reg rgb:cc6666
+ec creg rgb:de935f
+
+ec num rgb:de935f
+ec fline rgb:f0c674
+ec fname rgb:f0c674
+ec flow rgb:b4b7b4
+ec flow2 rgb:b4b7b4
+ec label rgb:b5bd68
+ec offset rgb:b294bb
+ec trap rgb:b5bd68
+ec flag rgb:b294bb
+ec args rgb:b5bd68
+ec invalid rgb:cc6666
+ec help rgb:b5bd68
+
+ec input rgb:c5c8c6
+ec comment rgb:969896
+ec usrcmt rgb:c5c8c6
+
+ec ai.read rgb:de935f
+ec ai.write rgb:f0c674
+ec ai.exec rgb:f0c674
+ec ai.seq rgb:f0c674
+ec ai.ascii rgb:b5bd68
+
+ec graph.true rgb:b5bd68
+ec graph.trufae rgb:b5bd68
+ec graph.false rgb:cc6666
+ec graph.current rgb:c5c8c6
+ec graph.traced rgb:f0c674
+ec graph.box rgb:8abeb7
+ec graph.box2 rgb:81a2be
+ec graph.box3 rgb:81a2be
+ec graph.box4 rgb:81a2be
+$dec=#!pipe node /home/juan/.local/share/radare2/r2pm/git//r2retdec/r2retdec.js

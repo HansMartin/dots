@@ -8,6 +8,7 @@
 " 1...................Plugins
 " 2....................Basics
 " 3................Remappings
+" 4......Plugin Configuration
 " 3.......................GUI
 " 4................Statusline
 " 5.....................Fonts
@@ -24,9 +25,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/seoul256.vim'                            " seoul colorscheme
     Plug 'ctrlpvim/ctrlp.vim'                               " fuzzy finder for files/buffers ..
     Plug 'ervandew/supertab'                                " tabcompletion
-    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }  " latex compile and preview
     Plug 'junegunn/goyo.vim'                                " Goyo, distraction free writing for LaTeX
     Plug 'HansMartin/inline-python'                         " Inline Python exec.
+    Plug 'xolox/vim-notes'                                  " efficient note-taking in vim
+    Plug 'xolox/vim-misc'                                   " needed for vim-notes
+    Plug 'SirVer/ultisnips'                                 " snippets in vim
 call plug#end()
 
 
@@ -40,6 +43,8 @@ colorscheme base16-nord
 
 " Encoding
 set encoding=utf-8
+set nocompatible
+set conceallevel=1          " conceallevel for markdown/latex files
 
 " disable any (terminal-)bells
 set noeb
@@ -85,13 +90,11 @@ noremap <leader>s :bn!<CR>
 vmap < <gv
 vmap > >gv
 
-" Map the Python Evaluation into the vim-expression command(Q)
-nnoremap Q :EvalPython <CR>
-let g:il_append=1
-let g:il_use_nextline=0
+
 
 " Remove Trailling Whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
+
 
 " auto execute xrdb when .Xresources is saved
 autocmd BufWritePost ~/.Xresources !xrdb %
@@ -102,21 +105,49 @@ autocmd BufWritePost ~/.Xresources !xrdb %
 vnoremap <C-c> "*y :let @+=@*<CR>
 nnoremap <leader>c "+yy
 
-" LaTeX Settings
-let g:livepreview_previewer = 'zathura'
-
 
 " Bind Goyo to shortcut
 map <F3> <ESC>:Goyo <CR>
 map <F4> <ESC>:Goyo 95%<CR>
 
-" Goyo configuration
-let g:goyo_width=100
-let g:goyo_height=100
-
 
 " Markdown viewer script
 map <F9> <ESC>:silent !md-viewer % <CR>
+
+
+
+" -----[ Plugin Configuration ]----- "
+
+" Map the Python Evaluation into the vim-expression command(Q)
+nnoremap Q :EvalPython <CR>
+let g:il_append=1
+let g:il_use_nextline=0
+
+
+" CtrlP Settings
+nnoremap <C-b> :CtrlPBuffer<CR>
+
+
+" Vim-Notes Configuration
+let g:notes_directories = ['~/documents/todo']
+let g:notes_suffix = '.note'
+
+" use this extension to autoconfig Goyo
+autocmd BufAdd *.note :Goyo 90%
+autocmd BufAdd *.note nnoremap <leader>f :foldclose<CR>
+
+
+" UltiSnips
+"let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsExpandTrigger = '<c-s>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips/'
+
+" Goyo Configuration
+let g:goyo_width=100
+let g:goyo_height=100
+
 
 
 " --- LaTeX Mappings ---

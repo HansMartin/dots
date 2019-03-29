@@ -27,8 +27,7 @@ set $terminal "st"
 set $file_browser "st -n vifm -e /bin/bash -ic vifm"
 
 # Font (window title, bar)
-font pango:monospace 8
-
+font pango:mono 8
 
 # -----[ Gaps and Borders ]----- #
 
@@ -94,6 +93,9 @@ bindsym Print --release exec --no-startup-id $HOME/.scripts/tools/mkscreenshot.s
 # this spawns in scratchpad mode!
 set $dropdownterm "st -n ddpython -e /bin/bash -ic python2"
 bindsym $mod+p exec $dropdownterm
+
+set $dropdownnotes "st -n ddnotes -e /bin/bash -ic 'vim note:general'"
+bindsym $mod+n exec $dropdownnotes
 
 # unicode emoji finder
 bindsym $mod+u exec $HOME/.scripts/i3/unicode.sh
@@ -258,7 +260,8 @@ bar {
         # default status string
         i3bar_command i3bar
         status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
-
+        #font pango:mono 10
+        modifier None
 	position top
         tray_output primary
         strip_workspace_numbers yes
@@ -293,13 +296,20 @@ bar {
 
 # Settings for the drop-drown python instance
 
-for_window [instance="ddpython"]        floating enable
 for_window [instance="ddpython"]        resize set 1000 400
 for_window [instance="ddpython"]        move scratchpad
 for_window [instance="ddpython"]        border pixel 3
 for_window [instance="ddpython"]        sticky enable
 for_window [instance="ddpython"]        scratchpad show
+for_window [instance="ddpython"]        floating enable
 
+# Same procedure for dropdown notes
+for_window [instance="ddnotes"]        resize set 1100 700
+for_window [instance="ddnotes"]        move scratchpad
+for_window [instance="ddnotes"]        border pixel 3
+for_window [instance="ddnotes"]        sticky enable
+for_window [instance="ddnotes"]        scratchpad show
+for_window [instance="ddnotes"]        floating enable
 
 # move them to seperate workspaces
 assign [instance="telegram"]            9
@@ -309,12 +319,11 @@ assign [instance="spotify"]             8
 # -----[ Runtime ]----- #
 
 exec         --no-startup-id redshift-gtk                                                               # no bluelight
-#exec         --no-startup-id $HOME/.scripts/tools/colorchanger base16_gruvbox-dark-pale                 # colorscheme _old
-exec         --no-startup-id $HOME/.scripts/tools/colorchanger orangina                                 # colorscheme
 exec         --no-startup-id nm-applet                                                                  # network manager applet
 exec         --no-startup-id volumeicon                                                                 # i need music! ~ applet for audio
 exec         --no-startup-id xfce4-power-manager                                                        # display power settings
 exec         --no-startup-id compton -b                                                                 # Transparency
+exec_always  --no-startup-id $HOME/.scripts/misc/multimonitor.sh                                        # script for multi monitor
 exec_always  --no-startup-id feh --bg-fill $HOME/pictures/wallpaper/wall.jpg
 exec_always  --no-startup-id setxkbmap -rules evdev -model evdev -layout us -variant altgr-intl         # us-international kb layout
-exec_always  --no-startup-id $HOME/.scripts/misc/multimonitor.sh                                        # script for multi monitor
+exec         --no-startup-id $HOME/.scripts/tools/colorchanger orangina                                 # colorscheme

@@ -3,6 +3,10 @@
 #   | .'| | | .'|_ -| -_|_ -|
 #   |__,|_|_|__,|___|___|___|
 #
+
+alias v='vim'
+alias vi='vim'
+
 # some ls aliases
 alias ll='ls -alh --color=auto'
 alias la='ls -Ah --color=auto'
@@ -13,13 +17,15 @@ alias ls='ls -CFh --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# grep coloring
-alias ogrep='grep --color=auto -i' # keep original grep
+# ripgrep > grep
 alias grep='rg'
+alias ogrep='grep --color=auto -i' # keep original grep
 
 
 # source: github.com/sharkdp/fd
 alias find='fd -H'
+# backup of original find
+alias ofind='/usr/bin/find'
 
 # cat on wings
 alias bat='bat --theme zenburn'
@@ -43,10 +49,11 @@ alias upgrade='sudo vpm update'
 alias install='sudo vpm install'
 
 alias cheat='python /root/tools/cheat/cheat.py'
-alias python="python2"
+#alias python="python2"
 alias loadX='xrdb $HOME/.Xresources'
-alias zzz='systemctl hibernate'
-
+alias zzz='systemctl suspend'
+alias ZZZ='systemctl hibernate'
+alias python-env="source $HOME/.scripts/misc/python-env"
 
 # brightness settings
 alias blow='xbacklight -set 10'

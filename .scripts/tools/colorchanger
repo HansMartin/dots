@@ -20,9 +20,8 @@ change_rofi() {
 
 
 change_xres () {
-    bi3_dir=$HOME/.scripts/colors/i3
+    bi3_dir=$HOME/.scripts/colors/xres
     xr="$bi3_dir/$base16_color.Xresources"
-
     if [ -f $xr ]; then
         xrdb -override "$xr"
         i3-msg reload -q
